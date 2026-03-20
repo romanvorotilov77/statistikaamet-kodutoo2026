@@ -1,1 +1,23 @@
 @import "tailwindcss";
+
+@theme {
+  --color-stat-primary: #000;
+  --color-stat-grey: #565656;
+  --color-stat-alt-grey: #929292;
+  --color-stat-light-grey: #DDD;
+  --color-stat-bg-grey: #F8F8F8;
+  
+  --color-stat-info: #0F4FEF;    
+  --color-stat-success: #4DC14D; 
+  --color-stat-error: #DC1919;   
+  --color-stat-warning: #FCC73B;
+  
+  --text-stat-small: 0.875rem; 
+  --text-stat-base: 1rem;      
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--color-stat-bg-grey);
+  color: var(--color-stat-primary);
+}

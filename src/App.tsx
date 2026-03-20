@@ -1,14 +1,13 @@
 import { Header } from "./components/Header"
+import { Footer } from "./components/Footer"
 
 function App() {
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen bg-gray-100 flex flex-col">
       <Header />
-      <main className="container mx-auto py-8">
-        <h1 className="text-4xl font-bold text-blue-600">
-          Viktoriin
-        </h1>
+      <main className="grow">
       </main>
+      <Footer />
     </div>
   )
 }

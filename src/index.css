@@ -1,23 +1,53 @@
 @import "tailwindcss";
 
 @theme {
-  --color-stat-primary: #000;
+  --color-stat-black: #000000;
+  --color-stat-white: #FFFFFF;
   --color-stat-grey: #565656;
-  --color-stat-alt-grey: #929292;
-  --color-stat-light-grey: #DDD;
-  --color-stat-bg-grey: #F8F8F8;
-  
-  --color-stat-info: #0F4FEF;    
-  --color-stat-success: #4DC14D; 
-  --color-stat-error: #DC1919;   
+  --color-stat-light-grey: #DDDDDD;
+  --color-stat-bg: #F8F8F8;
+  --color-stat-error: #DC1919;
   --color-stat-warning: #FCC73B;
-  
-  --text-stat-small: 0.875rem; 
-  --text-stat-base: 1rem;      
+  --color-stat-info: #0F4FEF;
+  --color-stat-success: #4DC14D;
+  --color-stat-focus: #9A82DB;
+  --color-stat-chart-1: #3F1A84;
+  --color-stat-chart-2: #F58FA9;
+  --color-stat-chart-3: #FFBC45;
+  --color-stat-chart-4: #3AD8CC;
+  --color-stat-chart-5: #0F4FEF;
 }
 
 body {
+  margin: 0;
+  background-color: #F8F8F8;
   font-family: 'Roboto', sans-serif;
-  background-color: var(--color-stat-bg-grey);
-  color: var(--color-stat-primary);
+  color: black;
+}
+
+h1 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 2.5rem;
+  line-height: 2.8125rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.875rem;
+  line-height: 2.1875rem;
+  font-weight: 700;
+}
+
+h3 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.375rem;
+  line-height: 1.75rem;
+  font-weight: 700;
+}
+
+.bg-dots {
+  background-image: radial-gradient(circle at 0.9px 0.9px, #C5C5C5 0.9px, transparent 0);  
+  background-size: 19px 19px;
+  background-position: 14px 14px;
 }

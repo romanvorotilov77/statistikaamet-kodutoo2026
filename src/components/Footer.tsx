@@ -54,7 +54,7 @@ export function Footer() {
               <p className={rowClass}>Viimati muudetud 1 aasta eest.</p>
               <p className={rowClass}>Uuendati lehekülge:</p>
               <p className={rowClass}>
-                Muudeti lehekülge: <span className="font-bold text-white">UI Kit</span>
+                Muudeti lehekülge: <span className="font-bold text-white"> UI Kit</span>
               </p>
             </div>
           </div>

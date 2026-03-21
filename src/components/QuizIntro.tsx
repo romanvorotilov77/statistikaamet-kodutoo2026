@@ -1,4 +1,8 @@
-const QuizIntro = () => {
+type QuizIntroProps = {
+  onStart: () => void
+}
+
+const QuizIntro = ({ onStart }: QuizIntroProps) => {
   return (
     <div className="relative bg-white border-2 border-stat-light-grey rounded-2xl p-8 md:p-12 pb-70">
       <div className="flex flex-col items-start p-0 gap-6 w-full flex-none order-0 grow-0">
@@ -20,6 +24,7 @@ const QuizIntro = () => {
       </div>
       <button
         type="button"
+        onClick={onStart}
         className="absolute right-8 bottom-8 flex flex-col justify-center items-center w-27.25 h-13.5 px-6 py-4 bg-black text-white border-2 border-transparent hover:border-black hover:bg-white hover:text-black active:w-26.75 active:h-13.5 active:p-0 active:bg-black active:text-white active:border-black transition-all duration-100"
       >
         Alusta

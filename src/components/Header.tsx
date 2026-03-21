@@ -4,7 +4,7 @@ import { menuItems } from '../data/menuItems';
 export function Header() {
 
   return (
-    <header className="w-full font-sans relative z-50">
+    <header className="w-full font-sans sticky top-0 z-50">
       <div className="bg-black text-white py-2.25 px-8 md:px-16">
         <div className="max-w-400 mx-auto grid grid-cols-3 items-center">
           

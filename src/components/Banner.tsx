@@ -3,7 +3,7 @@ import logo from '../assets/images/ES_Logo.png';
 
 export function Banner() {
 
-  const wrapperClasses = 'w-full h-[100px] bg-white bg-dots pl-9.5 flex items-center';
+  const wrapperClasses = 'w-full h-[100px] bg-white bg-dots pl-110 flex items-center';
   const contentClasses = 'flex items-center';
 
   return (

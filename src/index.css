@@ -179,7 +179,7 @@ h3 {
 }
 
 .bg-dots {
-  background-image: radial-gradient(circle at 0.85px 0.85px, #8C8C8C 0.9px, transparent 0);  
+  background-image: radial-gradient(circle at 0.85px 0.85px, #c0bebe 1px, transparent 0);  
   background-size: 19px 19px;
   background-position: 14px 14px;
 }

@@ -1,6 +1,8 @@
 import { IconArrowUpFull } from "../icons";
+import { useTranslation } from "react-i18next";
 
 export function Footer() {
+  const { t } = useTranslation();
   const sectionBlock = "bg-black px-6 max-[800px]:px-4 py-4 w-fit max-[800px]:w-full flex flex-col gap-3";
   const headingClass = "title-large";
   const rowClass = "inline-flex w-fit body-small";
@@ -14,7 +16,7 @@ export function Footer() {
       <div className="w-full pt-5 pl-8 md:pl-14.25 pr-8 md:pr-16 pb-5 flex flex-col xl:flex-row justify-between items-start gap-8">
         <div className="grid grid-cols-1 max-[800px]:grid-cols-2 max-[340px]:grid-cols-1 md:grid-cols-2 xl:grid-cols-none xl:grid-flow-col xl:auto-cols-max gap-x-14.25 max-[800px]:gap-x-4 gap-y-10 max-[800px]:gap-y-6 w-fit max-[800px]:w-full shrink-0">
           <div className={sectionBlock}>
-            <h3 className={headingClass}>Kontaktid</h3>
+            <h3 className={headingClass}>{t('footer.contacts')}</h3>
             <div className="flex flex-col gap-1.5">
               <div className={`${rowClass} items-center gap-2 cursor-pointer group`}>
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -32,41 +34,41 @@ export function Footer() {
           </div>
 
           <div className={sectionBlock}>
-            <h3 className={headingClass}>Leia kiirelt</h3>
+            <h3 className={headingClass}>{t('footer.findQuickly')}</h3>
             <ul>
               <li>
-                <a href="#" className={rowClass}>Sisukaart</a>
+                <a href="#" className={rowClass}>{t('footer.sitemap')}</a>
               </li>
             </ul>
           </div>
 
           <div className={sectionBlock}>
-            <h3 className={headingClass}>Andmekaitse</h3>
+            <h3 className={headingClass}>{t('footer.dataProtection')}</h3>
             <ul className="flex flex-col gap-1.5">
               <li>
-                <a href="#" className={rowClass}>Andmekaitse</a>
+                <a href="#" className={rowClass}>{t('footer.dataProtection')}</a>
               </li>
               <li>
-                <a href="#" className={rowClass}>Küpsiste sätted</a>
+                <a href="#" className={rowClass}>{t('footer.cookieSettings')}</a>
               </li>
             </ul>
           </div>
 
           <div className={sectionBlock}>
-            <h3 className={headingClass}>Muudatuste logi</h3>
+            <h3 className={headingClass}>{t('footer.changeLog')}</h3>
             <div className="flex flex-col items-start gap-1 text-gray-300 text-left">
-              <p className="body-2-regular">Viimati muudetud 1 aasta eest.</p>
-              <p className="body-2-regular">Uuendati lehekülge:</p>
+              <p className="body-2-regular">{t('footer.lastUpdated')}</p>
+              <p className="body-2-regular">{t('footer.updatedPage')}</p>
               <p className="body-2-regular flex flex-wrap items-center gap-1">
-                Muudeti lehekülge: <span className="body-2-bold text-white">UI Kit</span>
+                {t('footer.modifiedPage')} <span className="body-2-bold text-white">{t('footer.modifiedItem')}</span>
               </p>
             </div>
           </div>
         </div>
 
         <div className="self-end mb-0 xl:mb-4.75 mr-0">
-          <button type="button" aria-label="Liigu üles" onClick={handleScrollToTop}
-            className="bg-black border-2 border-white px-5 py-2 flex items-center gap-3 label-medium-bold uppercase tracking-widest hover:bg-white hover:text-black text-center transition-all">Üles
+          <button type="button" aria-label={t('footer.scrollTopAria')} onClick={handleScrollToTop}
+            className="bg-black border-2 border-white px-5 py-2 flex items-center gap-3 label-medium-bold uppercase tracking-widest hover:bg-white hover:text-black text-center transition-all">{t('footer.scrollTop')}
             <span className="[&_svg]:stroke-3">
               <IconArrowUpFull className="w-4 h-4" />
             </span>

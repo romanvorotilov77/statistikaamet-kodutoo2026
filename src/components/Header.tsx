@@ -1,15 +1,17 @@
 import { IconFacebook, IconTwitter, IconLinkedIn, IconYouTube, IconInstagram } from '../icons';
-import { menuItems } from '../data/menuItems';
-
-const socialMedia = [
-  { icon: IconFacebook, label: 'Facebook', ariaLabel: 'Facebook' },
-  { icon: IconTwitter, label: 'Twitter', ariaLabel: 'Twitter' },
-  { icon: IconLinkedIn, label: 'LinkedIn', ariaLabel: 'LinkedIn' },
-  { icon: IconYouTube, label: 'YouTube', ariaLabel: 'YouTube' },
-  { icon: IconInstagram, label: 'Instagram', ariaLabel: 'Instagram' },
-];
+import { useTranslation } from 'react-i18next';
 
 export function Header() {
+  const { t, i18n } = useTranslation();
+  const menuItems = t('header.menuItems', { returnObjects: true }) as string[];
+  const socialMedia = [
+    { icon: IconFacebook, label: t('header.social.facebook') },
+    { icon: IconTwitter, label: t('header.social.twitter') },
+    { icon: IconLinkedIn, label: t('header.social.linkedIn') },
+    { icon: IconYouTube, label: t('header.social.youtube') },
+    { icon: IconInstagram, label: t('header.social.instagram') },
+  ];
+  const isEstonian = i18n.language === 'et';
 
   return (
     <header className="w-full sticky top-0 z-50">
@@ -18,8 +20,8 @@ export function Header() {
           
           <div className="relative group flex items-center h-full min-w-72 max-[850px]:min-w-0 justify-self-start">
             <div className="flex items-center gap-1 text-[13px] leading-4 cursor-pointer">
-              <span className="body-2-regular text-white text-[13px] leading-4">Statistikaamet:</span>
-              <span className="body-2-bold text-[13px] leading-4 flex items-center gap-1">Viktoriin
+              <span className="body-2-regular text-white text-[13px] leading-4">{t('header.titlePrefix')}</span>
+              <span className="body-2-bold text-[13px] leading-4 flex items-center gap-1">{t('header.titleMain')}
                 <svg 
                   className="w-3 h-3 transition-transform duration-200 group-hover:rotate-180" 
                   fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -42,8 +44,8 @@ export function Header() {
           </div>
 
           <div className="flex justify-center items-center gap-8 justify-self-center max-[850px]:hidden">
-            {socialMedia.map(({ icon: Icon, label, ariaLabel }) => (
-              <a key={label} href="#" aria-label={ariaLabel} className="group relative text-[13px] text-white hover:text-gray-300 cursor-pointer transition-colors flex items-center">
+            {socialMedia.map(({ icon: Icon, label }) => (
+              <a key={label} href="#" aria-label={label} className="group relative text-[13px] text-white hover:text-gray-300 cursor-pointer transition-colors flex items-center">
                 <Icon className="w-3.5 h-3.5" />
                 <span className="pointer-events-none absolute left-1/2 top-full z-20 mt-4 -translate-x-1/2 whitespace-nowrap bg-black px-2 py-1 body-2-regular text-white opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150">
                   <span className="absolute -top-1.5 left-1/2 -translate-x-1/2 tooltip-arrow"></span>
@@ -54,11 +56,25 @@ export function Header() {
           </div>
 
           <div className="flex justify-end items-center gap-8 max-[850px]:gap-4 text-[13px] leading-4 min-w-72 max-[850px]:min-w-0 justify-self-end">
-            <a href="#" className="body-2-bold text-[13px] leading-4 hover:underline transition-all max-[500px]:hidden">Ligipääsetavus</a>            
+            <a href="#" className="body-2-bold text-[13px] leading-4 hover:underline transition-all max-[500px]:hidden">{t('header.accessibility')}</a>
             <div className="flex items-center gap-1 max-[400px]:hidden">
-              <span className="body-2-bold text-[13px] leading-4 cursor-pointer">EST</span>
+              <button
+                type="button"
+                onClick={() => void i18n.changeLanguage('et')}
+                className={`text-[13px] leading-4 cursor-pointer ${isEstonian ? 'body-2-bold' : 'body-2-regular text-gray-500 hover:text-white'}`}
+                aria-pressed={isEstonian}
+              >
+                {t('header.language.est')}
+              </button>
               <span className="body-2-regular text-gray-600">|</span>
-              <span className="body-2-regular text-[13px] leading-4 text-gray-500 cursor-pointer hover:text-white">ENG</span>
+              <button
+                type="button"
+                onClick={() => void i18n.changeLanguage('en')}
+                className={`text-[13px] leading-4 cursor-pointer ${!isEstonian ? 'body-2-bold' : 'body-2-regular text-gray-500 hover:text-white'}`}
+                aria-pressed={!isEstonian}
+              >
+                {t('header.language.eng')}
+              </button>
             </div>
           </div>
 

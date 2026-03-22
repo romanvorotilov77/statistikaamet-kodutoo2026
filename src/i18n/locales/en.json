@@ -1,0 +1,101 @@
+{
+  "header": {
+    "titlePrefix": "Statistics Estonia:",
+    "titleMain": "Quiz",
+    "accessibility": "Accessibility",
+    "language": {
+      "est": "EST",
+      "eng": "ENG"
+    },
+    "social": {
+      "facebook": "Facebook",
+      "twitter": "Twitter",
+      "linkedIn": "LinkedIn",
+      "youtube": "YouTube",
+      "instagram": "Instagram"
+    },
+    "menuItems": [
+      "Home",
+      "Statistics Database",
+      "Salary Application",
+      "Dashboards",
+      "Foreign Trade Application",
+      "Truthmap",
+      "Name Statistics Application"
+    ]
+  },
+  "banner": {
+    "logoAlt": "Statistics Estonia"
+  },
+  "quiz": {
+    "title": "Quiz",
+    "subtitle": "Test your knowledge about Estonia!",
+    "howItWorks": "How the quiz works",
+    "intro": {
+      "first": "Questions appear one by one. Make sure you have selected an answer, and when you are ready, move to the next question!",
+      "second": "You immediately see whether your answer was correct. At the end you will see your final result and the correct answers.",
+      "third": "Stay focused and good luck!"
+    },
+    "buttons": {
+      "start": "Start",
+      "restart": "Start again",
+      "check": "Check",
+      "next": "Next",
+      "results": "View results"
+    },
+    "questionCounter": "Question {{current}} / {{total}}",
+    "feedback": {
+      "selectFirst": "Please select an answer first",
+      "correct": "Correct answer!",
+      "wrong": "Wrong answer. The correct answer is: {{correctAnswer}}"
+    },
+    "final": {
+      "excellent": "Excellent result! You answered all questions correctly.",
+      "good": "Great job! You have solid knowledge, keep it up.",
+      "start": "Good start! Try again and improve your result."
+    },
+    "results": {
+      "title": "Results",
+      "question": "Question",
+      "yourAnswer": "Your answer",
+      "status": "Status",
+      "correct": "Correct",
+      "wrong": "Wrong",
+      "score": "Score: {{score}} / {{total}}"
+    },
+    "questions": [
+      {
+        "id": 1,
+        "question": "What is the capital of Estonia?",
+        "options": ["Tartu", "Tallinn", "Pärnu"],
+        "correctAnswer": "Tallinn"
+      },
+      {
+        "id": 2,
+        "question": "What is the largest island in Estonia?",
+        "options": ["Hiiumaa", "Muhu", "Saaremaa", "Vormsi"],
+        "correctAnswer": "Saaremaa"
+      },
+      {
+        "id": 3,
+        "question": "What is Estonia's national bird?",
+        "options": ["Great Tit", "Barn Swallow", "White Stork"],
+        "correctAnswer": "Barn Swallow"
+      }
+    ]
+  },
+  "footer": {
+    "contacts": "Contacts",
+    "findQuickly": "Quick links",
+    "sitemap": "Sitemap",
+    "dataProtection": "Data protection",
+    "cookieSettings": "Cookie settings",
+    "changeLog": "Change log",
+    "lastUpdated": "Last updated 1 year ago.",
+    "updatedPage": "Updated page:",
+    "modifiedPage": "Modified page:",
+    "modifiedItem": "UI Kit",
+    "scrollTop": "Top",
+    "scrollTopAria": "Scroll to top"
+  }
+}

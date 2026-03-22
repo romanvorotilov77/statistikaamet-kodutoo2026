@@ -1,10 +1,13 @@
 import { useState } from "react"
-import { questions } from "../data/questions"
+import { useTranslation } from "react-i18next"
+import type { Question } from "../data/questions"
 import { QuestionElement } from "./QuestionElement"
 import QuizIntro from "./QuizIntro"
 import { Tulemus } from "./Tulemus"
 
 export function Quiz() {
+  const { t } = useTranslation()
+  const questions = t("quiz.questions", { returnObjects: true }) as Question[]
   const [started, setStarted] = useState(false)
   const [currentIndex, setCurrentIndex] = useState(0)
   const [selectedAnswers, setSelectedAnswers] = useState<Record<number, string>>({})
@@ -67,9 +70,9 @@ export function Quiz() {
   }
 
   const getFinalMessage = () => {
-    if (score === questions.length) return "Suurepärane tulemus! Vastasid kõigile küsimustele õigesti."
-    if (score >= Math.ceil(questions.length / 2)) return "Tubli! Sul on tugevad teadmised, jatka samas vaimus."
-    return "Hea algus! Proovi uuesti ja paranda oma tulemust."
+    if (score === questions.length) return t("quiz.final.excellent")
+    if (score >= Math.ceil(questions.length / 2)) return t("quiz.final.good")
+    return t("quiz.final.start")
   }
 
   return (

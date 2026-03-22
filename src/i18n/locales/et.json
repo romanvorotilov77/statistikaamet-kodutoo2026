@@ -1,0 +1,101 @@
+{
+  "header": {
+    "titlePrefix": "Statistikaamet:",
+    "titleMain": "Viktoriin",
+    "accessibility": "Ligipääsetavus",
+    "language": {
+      "est": "EST",
+      "eng": "ENG"
+    },
+    "social": {
+      "facebook": "Facebook",
+      "twitter": "Twitter",
+      "linkedIn": "LinkedIn",
+      "youtube": "YouTube",
+      "instagram": "Instagram"
+    },
+    "menuItems": [
+      "Koduleht",
+      "Statistika andmebaas",
+      "Palgarakendus",
+      "Juhtimislauad",
+      "Väliskaubanduse rakendus",
+      "Tõetamm",
+      "Nimede statistika rakendus"
+    ]
+  },
+  "banner": {
+    "logoAlt": "Eesti Statistika"
+  },
+  "quiz": {
+    "title": "Viktoriin",
+    "subtitle": "Testi oma teadmisi Eesti kohta!",
+    "howItWorks": "Kuidas viktoriin töötab",
+    "intro": {
+      "first": "Küsimused avanevad ükshaaval. Veendu, et oled vastuse valinud, ja kui oled valmis, vajuta järgmisele küsimusele!",
+      "second": "Saad kohe teada, kas vastasid õigesti või mitte. Lõpus näed lõpptulemust ja õigeid vastuseid.",
+      "third": "Ole tähelepanelik ja õnne lahendamisel!"
+    },
+    "buttons": {
+      "start": "Alusta",
+      "restart": "Alusta uuesti",
+      "check": "Kontrolli",
+      "next": "Järgmine",
+      "results": "Vaata tulemusi"
+    },
+    "questionCounter": "Küsimus {{current}} / {{total}}",
+    "feedback": {
+      "selectFirst": "Palun vali enne vastus",
+      "correct": "Õige vastus!",
+      "wrong": "Vale vastus. Õige vastus on: {{correctAnswer}}"
+    },
+    "final": {
+      "excellent": "Suurepärane tulemus! Vastasid kõigile küsimustele õigesti.",
+      "good": "Tubli! Sul on tugevad teadmised, jätka samas vaimus.",
+      "start": "Hea algus! Proovi uuesti ja paranda oma tulemust."
+    },
+    "results": {
+      "title": "Tulemused",
+      "question": "Küsimus",
+      "yourAnswer": "Sinu vastus",
+      "status": "Staatus",
+      "correct": "Õige",
+      "wrong": "Vale",
+      "score": "Skoor: {{score}} / {{total}}"
+    },
+    "questions": [
+      {
+        "id": 1,
+        "question": "Mis on Eesti pealinn?",
+        "options": ["Tartu", "Tallinn", "Pärnu"],
+        "correctAnswer": "Tallinn"
+      },
+      {
+        "id": 2,
+        "question": "Mis on Eesti suurim saar?",
+        "options": ["Hiiumaa", "Muhu", "Saaremaa", "Vormsi"],
+        "correctAnswer": "Saaremaa"
+      },
+      {
+        "id": 3,
+        "question": "Mis on Eesti rahvuslind?",
+        "options": ["Rasvatihane", "Suitsupääsuke", "Valge-toonekurg"],
+        "correctAnswer": "Suitsupääsuke"
+      }
+    ]
+  },
+  "footer": {
+    "contacts": "Kontaktid",
+    "findQuickly": "Leia kiirelt",
+    "sitemap": "Sisukaart",
+    "dataProtection": "Andmekaitse",
+    "cookieSettings": "Küpsiste sätted",
+    "changeLog": "Muudatuste logi",
+    "lastUpdated": "Viimati muudetud 1 aasta eest.",
+    "updatedPage": "Uuendati lehekülge:",
+    "modifiedPage": "Muudeti lehekülge:",
+    "modifiedItem": "UI Kit",
+    "scrollTop": "Üles",
+    "scrollTopAria": "Liigu üles"
+  }
+}

@@ -1,5 +1,6 @@
 import type { Question } from "../data/questions"
 import { IconCheckFilled, IconStatusCheck, IconStatusClose } from "../icons"
+import { useTranslation } from "react-i18next"
 
 type QuestionElementProps = {
   question: Question
@@ -26,6 +27,7 @@ export function QuestionElement({
   onCheckAnswer,
   onNext,
 }: QuestionElementProps) {
+  const { t } = useTranslation()
   const isSuccessFeedback = isSubmitted && Boolean(isCorrect)
   const showFeedback = isSubmitted || showSelectionError
   const feedbackClass = isSuccessFeedback ? "feedback-success" : "feedback-error"
@@ -33,15 +35,15 @@ export function QuestionElement({
   const textColorClass = isSuccessFeedback ? "text-stat-success" : "text-stat-error"
   
   const feedbackMessage = showSelectionError
-    ? "Palun vali enne vastus"
+    ? t("quiz.feedback.selectFirst")
     : isSuccessFeedback
-      ? "Õige vastus!"
-      : `Vale vastus. Õige vastus on: ${question.correctAnswer}`
+      ? t("quiz.feedback.correct")
+      : t("quiz.feedback.wrong", { correctAnswer: question.correctAnswer })
 
   return (
     <article className="bg-white border-2 border-stat-light-grey rounded-2xl p-8 md:p-10">
       <p className="label-medium text-stat-grey mb-4 block">
-        Küsimus {questionIndex + 1} / {totalQuestions}
+        {t("quiz.questionCounter", { current: questionIndex + 1, total: totalQuestions })}
       </p>
       <h2 className="headline-small mb-8">{question.question}</h2>
 
@@ -116,7 +118,7 @@ export function QuestionElement({
             onClick={onCheckAnswer}
             className="title-medium px-6 py-3 bg-black text-white border-2 border-transparent hover:border-black hover:bg-white hover:text-black active:bg-black active:text-white active:border-black transition-all duration-100"
           >
-            Kontrolli
+            {t("quiz.buttons.check")}
           </button>
         ) : (
           <button
@@ -124,7 +126,7 @@ export function QuestionElement({
             onClick={onNext}
             className="title-medium px-6 py-3 bg-black text-white border-2 border-transparent hover:border-black hover:bg-white hover:text-black active:bg-black active:text-white active:border-black transition-all duration-100"
           >
-            {questionIndex === totalQuestions - 1 ? "Vaata tulemusi" : "Järgmine"}
+            {questionIndex === totalQuestions - 1 ? t("quiz.buttons.results") : t("quiz.buttons.next")}
           </button>
         )}
       </div>

@@ -4,14 +4,14 @@ import { menuItems } from '../data/menuItems';
 export function Header() {
 
   return (
-    <header className="w-full font-sans sticky top-0 z-50">
+    <header className="w-full sticky top-0 z-50">
       <div className="bg-black text-white py-2.25 px-8 md:px-16">
-        <div className="max-w-400 mx-auto grid grid-cols-3 items-center">
+        <div className="max-w-400 mx-auto grid grid-cols-[1fr_auto_1fr] items-center">
           
-          <div className="relative group flex items-center h-full">
-            <div className="flex items-center gap-1 text-[13px] cursor-pointer">
-              <span className="text-white">Statistikaamet:</span>
-              <span className="font-bold flex items-center gap-1">Viktoriin
+          <div className="relative group flex items-center h-full min-w-72 justify-self-start">
+            <div className="flex items-center gap-1 text-[13px] leading-4 cursor-pointer">
+              <span className="body-2-regular text-white text-[13px] leading-4">Statistikaamet:</span>
+              <span className="body-2-bold text-[13px] leading-4 flex items-center gap-1">Viktoriin
                 <svg 
                   className="w-3 h-3 transition-transform duration-200 group-hover:rotate-180" 
                   fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -20,12 +20,12 @@ export function Header() {
               </span>
             </div>
 
-            <div className="absolute top-full left-0 mt-2.25 w-max bg-white text-black shadow-[0_20px_50px_rgba(0,0,0,0.1)] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150">
-              <div className="absolute inset-y-0 -left-6 w-6 bg-white" />
+            <div className="absolute top-full left-0 mt-2.25 w-max bg-white text-black shadow-[0_18px_44px_rgba(0,0,0,0.2)] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150">
+              <div className="absolute inset-y-0 -left-6 w-6 bg-white shadow-[-10px_18px_24px_rgba(0,0,0,0.14)]" />
               <div className="relative py-2">
                 {menuItems.map((item) => (
                   <a key={item} 
-                    href="#" className="block pl-1.5 pr-6 py-1.5 text-left text-[13px] font-bold hover:bg-stat-bg-grey transition-colors">
+                    href="#" className="block pl-1.5 pr-6 py-1.5 text-left body-2-bold text-[13px] leading-4 hover:bg-stat-bg transition-colors">
                     {item}
                   </a>
                 ))}
@@ -33,7 +33,7 @@ export function Header() {
             </div>
           </div>
 
-          <div className="flex justify-center items-center gap-6">
+          <div className="flex justify-center items-center gap-8 justify-self-center">
             <a href="#" className="text-[13px] text-white hover:text-gray-300 cursor-pointer transition-colors flex items-center">
               <IconFacebook className="w-3.5 h-3.5" />
             </a>
@@ -51,12 +51,12 @@ export function Header() {
             </a>
           </div>
 
-          <div className="flex justify-end items-center gap-8 text-[13px] font-bold">
-            <a href="#" className="hover:underline transition-all">Ligipääsetavus</a>            
+          <div className="flex justify-end items-center gap-8 text-[13px] leading-4 min-w-72 justify-self-end">
+            <a href="#" className="body-2-bold text-[13px] leading-4 hover:underline transition-all">Ligipääsetavus</a>            
             <div className="flex items-center gap-1">
-              <span className="cursor-pointer">EST</span>
-              <span className="text-gray-600 font-normal">|</span>
-              <span className="text-gray-500 cursor-pointer font-normal hover:text-white">ENG</span>
+              <span className="body-2-bold text-[13px] leading-4 cursor-pointer">EST</span>
+              <span className="body-2-regular text-gray-600">|</span>
+              <span className="body-2-regular text-[13px] leading-4 text-gray-500 cursor-pointer hover:text-white">ENG</span>
             </div>
           </div>
 

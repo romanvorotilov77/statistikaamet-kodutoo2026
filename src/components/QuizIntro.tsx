@@ -25,7 +25,7 @@ const QuizIntro = ({ onStart }: QuizIntroProps) => {
       <button
         type="button"
         onClick={onStart}
-        className="absolute right-8 bottom-8 flex flex-col justify-center items-center w-27.25 h-13.5 px-6 py-4 bg-black text-white border-2 border-transparent hover:border-black hover:bg-white hover:text-black active:w-26.75 active:h-13.5 active:p-0 active:bg-black active:text-white active:border-black transition-all duration-100"
+        className="absolute right-8 bottom-8 title-medium flex flex-col justify-center items-center w-27.25 h-13.5 px-6 py-4 bg-black text-white border-2 border-transparent hover:border-black hover:bg-white hover:text-black active:w-26.75 active:h-13.5 active:p-0 active:bg-black active:text-white active:border-black transition-all duration-100"
       >
         Alusta
       </button>

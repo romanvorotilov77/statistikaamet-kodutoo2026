@@ -1,7 +1,7 @@
-import { useMemo, useState } from "react"
+import { useCallback, useMemo, useState } from "react"
 import { useTranslation } from "react-i18next"
-import { useQuestions } from "../hooks/useQuestions"
-import type { QuizResult } from "../types"
+import { useQuestions } from "../../hooks/useQuestions"
+import type { QuizResult } from "../../types"
 import { QuestionElement } from "./QuestionElement"
 import { QuizIntro } from "./QuizIntro"
 import { Tulemus } from "./Tulemus"
@@ -25,26 +25,29 @@ export function Quiz() {
     [results],
   )
 
-  const handleStart = () => {
+  const handleStart = useCallback(() => {
     setStarted(true)
     setCurrentIndex(0)
     setFinished(false)
     setSelectedAnswers({})
     setResults({})
     setShowSelectionError(false)
-  }
+  }, [])
 
-  const handleSelect = (option: string) => {
-    if (isSubmitted || !currentQuestion) return
+  const handleSelect = useCallback(
+    (option: string) => {
+      if (isSubmitted || !currentQuestion) return
 
-    setSelectedAnswers((prev) => ({
-      ...prev,
-      [currentQuestion.id]: option,
-    }))
-    setShowSelectionError(false)
-  }
+      setSelectedAnswers((prev) => ({
+        ...prev,
+        [currentQuestion.id]: option,
+      }))
+      setShowSelectionError(false)
+    },
+    [currentQuestion, isSubmitted],
+  )
 
-  const handleCheckAnswer = () => {
+  const handleCheckAnswer = useCallback(() => {
     if (!currentQuestion || isSubmitted) return
     if (!selectedOption) {
       setShowSelectionError(true)
@@ -60,9 +63,9 @@ export function Quiz() {
         isCorrect: selectedOption === currentQuestion.correctAnswer,
       },
     }))
-  }
+  }, [currentQuestion, isSubmitted, selectedOption])
 
-  const handleNext = () => {
+  const handleNext = useCallback(() => {
     if (!isSubmitted) return
 
     if (currentIndex < questions.length - 1) {
@@ -71,7 +74,7 @@ export function Quiz() {
     }
 
     setFinished(true)
-  }
+  }, [isSubmitted, currentIndex, questions.length])
 
   const finalMessage = useMemo(() => {
     if (score === questions.length) return t("quiz.final.excellent")

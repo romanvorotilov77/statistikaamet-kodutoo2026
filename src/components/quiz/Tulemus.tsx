@@ -1,5 +1,6 @@
-import type { Question, QuizResult } from "../types"
+import type { Question, QuizResult } from "../../types"
 import { useTranslation } from "react-i18next"
+import { Button } from "../ui"
 
 type TulemusProps = {
   questions: Question[]
@@ -48,13 +49,7 @@ export function Tulemus({ questions, results, score, finalMessage, onRestart }: 
       </div>
 
       <div className="flex justify-end pt-2">
-        <button
-          type="button"
-          onClick={onRestart}
-          className="title-medium px-6 py-3 bg-black text-white border-2 border-transparent hover:border-black hover:bg-white hover:text-black active:bg-black active:text-white active:border-black transition-all duration-100"
-        >
-          {t("quiz.buttons.restart")}
-        </button>
+        <Button onClick={onRestart}>{t("quiz.buttons.restart")}</Button>
       </div>
     </div>
   )

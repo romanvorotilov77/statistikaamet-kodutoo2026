@@ -1,4 +1,5 @@
-import { IconFacebook, IconTwitter, IconLinkedIn, IconYouTube, IconInstagram } from '../icons';
+import { useCallback } from 'react';
+import { IconFacebook, IconTwitter, IconLinkedIn, IconYouTube, IconInstagram } from '../../icons';
 import { useTranslation } from 'react-i18next';
 
 export function Header() {
@@ -12,6 +13,10 @@ export function Header() {
     { icon: IconInstagram, label: t('header.social.instagram') },
   ];
   const isEstonian = i18n.language === 'et';
+
+  const switchLanguage = useCallback((lang: string) => {
+    void i18n.changeLanguage(lang)
+  }, [i18n])
 
   return (
     <header className="w-full sticky top-0 z-50">
@@ -60,7 +65,7 @@ export function Header() {
             <div className="flex items-center gap-1 max-[400px]:hidden">
               <button
                 type="button"
-                onClick={() => void i18n.changeLanguage('et')}
+                onClick={() => switchLanguage('et')}
                 className={`text-[13px] leading-4 cursor-pointer ${isEstonian ? 'body-2-bold' : 'body-2-regular text-gray-500 hover:text-white'}`}
                 aria-pressed={isEstonian}
               >
@@ -69,7 +74,7 @@ export function Header() {
               <span className="body-2-regular text-gray-600">|</span>
               <button
                 type="button"
-                onClick={() => void i18n.changeLanguage('en')}
+                onClick={() => switchLanguage('en')}
                 className={`text-[13px] leading-4 cursor-pointer ${!isEstonian ? 'body-2-bold' : 'body-2-regular text-gray-500 hover:text-white'}`}
                 aria-pressed={!isEstonian}
               >

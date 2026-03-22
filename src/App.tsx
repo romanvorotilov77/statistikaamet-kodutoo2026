@@ -1,18 +1,16 @@
-import { useState } from "react"
+import { useCallback, useState } from "react"
 import { useTranslation } from "react-i18next"
-import { Header } from "./components/Header"
-import { Footer } from "./components/Footer"
-import { Banner } from "./components/Banner"
-import { Quiz } from "./components/Quiz"
+import { Header, Footer, Banner } from "./components/layout"
+import { Quiz } from "./components/quiz"
 
 function App() {
   const [quizKey, setQuizKey] = useState(0)
   const { i18n } = useTranslation()
 
-  const handleLogoClick = () => {
+  const handleLogoClick = useCallback(() => {
     setQuizKey((prev) => prev + 1)
     window.scrollTo({ top: 0, behavior: "smooth" })
-  }
+  }, [])
 
   return (
     <div className="min-h-screen bg-white flex flex-col">

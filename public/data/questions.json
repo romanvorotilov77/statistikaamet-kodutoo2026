@@ -1,0 +1,42 @@
+{
+  "et": [
+    {
+      "id": 1,
+      "question": "Mis on Eesti pealinn?",
+      "options": ["Tartu", "Tallinn", "Pärnu"],
+      "correctAnswer": "Tallinn"
+    },
+    {
+      "id": 2,
+      "question": "Mis on Eesti suurim saar?",
+      "options": ["Hiiumaa", "Muhu", "Saaremaa", "Vormsi"],
+      "correctAnswer": "Saaremaa"
+    },
+    {
+      "id": 3,
+      "question": "Mis on Eesti rahvuslind?",
+      "options": ["Rasvatihane", "Suitsupääsuke", "Valge-toonekurg"],
+      "correctAnswer": "Suitsupääsuke"
+    }
+  ],
+  "en": [
+    {
+      "id": 1,
+      "question": "What is the capital of Estonia?",
+      "options": ["Tartu", "Tallinn", "Pärnu"],
+      "correctAnswer": "Tallinn"
+    },
+    {
+      "id": 2,
+      "question": "What is the largest island in Estonia?",
+      "options": ["Hiiumaa", "Muhu", "Saaremaa", "Vormsi"],
+      "correctAnswer": "Saaremaa"
+    },
+    {
+      "id": 3,
+      "question": "What is Estonia's national bird?",
+      "options": ["Great Tit", "Barn Swallow", "White Stork"],
+      "correctAnswer": "Barn Swallow"
+    }
+  ]
+}

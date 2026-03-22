@@ -44,6 +44,8 @@
       "results": "Vaata tulemusi"
     },
     "questionCounter": "Küsimus {{current}} / {{total}}",
+    "loading": "Laen küsimusi...",
+    "error": "Küsimuste laadimine ebaõnnestus. Proovi uuesti.",
     "feedback": {
       "selectFirst": "Palun vali enne vastus",
       "correct": "Õige vastus!",
@@ -62,27 +64,7 @@
       "correct": "Õige",
       "wrong": "Vale",
       "score": "Skoor: {{score}} / {{total}}"
-    },
-    "questions": [
-      {
-        "id": 1,
-        "question": "Mis on Eesti pealinn?",
-        "options": ["Tartu", "Tallinn", "Pärnu"],
-        "correctAnswer": "Tallinn"
-      },
-      {
-        "id": 2,
-        "question": "Mis on Eesti suurim saar?",
-        "options": ["Hiiumaa", "Muhu", "Saaremaa", "Vormsi"],
-        "correctAnswer": "Saaremaa"
-      },
-      {
-        "id": 3,
-        "question": "Mis on Eesti rahvuslind?",
-        "options": ["Rasvatihane", "Suitsupääsuke", "Valge-toonekurg"],
-        "correctAnswer": "Suitsupääsuke"
-      }
-    ]
+    }
   },
   "footer": {
     "contacts": "Kontaktid",

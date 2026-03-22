@@ -1,4 +1,4 @@
-import type { Question } from "../data/questions"
+import type { Question } from "../types"
 import { useTranslation } from "react-i18next"
 
 type TulemusProps = {

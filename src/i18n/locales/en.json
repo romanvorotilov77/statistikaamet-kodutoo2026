@@ -44,6 +44,8 @@
       "results": "View results"
     },
     "questionCounter": "Question {{current}} / {{total}}",
+    "loading": "Loading questions...",
+    "error": "Failed to load questions. Please try again.",
     "feedback": {
       "selectFirst": "Please select an answer first",
       "correct": "Correct answer!",
@@ -62,27 +64,7 @@
       "correct": "Correct",
       "wrong": "Wrong",
       "score": "Score: {{score}} / {{total}}"
-    },
-    "questions": [
-      {
-        "id": 1,
-        "question": "What is the capital of Estonia?",
-        "options": ["Tartu", "Tallinn", "Pärnu"],
-        "correctAnswer": "Tallinn"
-      },
-      {
-        "id": 2,
-        "question": "What is the largest island in Estonia?",
-        "options": ["Hiiumaa", "Muhu", "Saaremaa", "Vormsi"],
-        "correctAnswer": "Saaremaa"
-      },
-      {
-        "id": 3,
-        "question": "What is Estonia's national bird?",
-        "options": ["Great Tit", "Barn Swallow", "White Stork"],
-        "correctAnswer": "Barn Swallow"
-      }
-    ]
+    }
   },
   "footer": {
     "contacts": "Contacts",

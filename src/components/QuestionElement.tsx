@@ -1,4 +1,4 @@
-import type { Question } from "../data/questions"
+import type { Question } from "../types"
 import { IconCheckFilled, IconStatusCheck, IconStatusClose } from "../icons"
 import { useTranslation } from "react-i18next"
 

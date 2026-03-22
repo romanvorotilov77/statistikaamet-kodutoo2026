@@ -1,13 +1,13 @@
 import { useState } from "react"
 import { useTranslation } from "react-i18next"
-import type { Question } from "../data/questions"
+import { useQuestions } from "../hooks/useQuestions"
 import { QuestionElement } from "./QuestionElement"
 import QuizIntro from "./QuizIntro"
 import { Tulemus } from "./Tulemus"
 
 export function Quiz() {
-  const { t } = useTranslation()
-  const questions = t("quiz.questions", { returnObjects: true }) as Question[]
+  const { t, i18n } = useTranslation()
+  const { data: questions = [], isLoading, isError } = useQuestions(i18n.language)
   const [started, setStarted] = useState(false)
   const [currentIndex, setCurrentIndex] = useState(0)
   const [selectedAnswers, setSelectedAnswers] = useState<Record<number, string>>({})
@@ -73,6 +73,26 @@ export function Quiz() {
     if (score === questions.length) return t("quiz.final.excellent")
     if (score >= Math.ceil(questions.length / 2)) return t("quiz.final.good")
     return t("quiz.final.start")
+  }
+
+  if (isLoading) {
+    return (
+      <section className="py-6">
+        <div className="w-full">
+          <p className="body-medium text-stat-grey">{t("quiz.loading")}</p>
+        </div>
+      </section>
+    )
+  }
+
+  if (isError) {
+    return (
+      <section className="py-6">
+        <div className="w-full">
+          <p className="body-medium text-stat-error">{t("quiz.error")}</p>
+        </div>
+      </section>
+    )
   }
 
   return (

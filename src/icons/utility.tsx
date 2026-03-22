@@ -15,3 +15,21 @@ export const IconArrowUpFull = ({ className = "w-4 h-4" }) => (
     <path strokeLinecap="round" strokeLinejoin="round" d="M12 19V5m0 0l-7 7m7-7l7 7" />
   </svg>
 );
+
+export const IconCheckFilled = ({ className = "w-4 h-4" }) => (
+  <svg className={className} viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M20.285 6.709a1 1 0 010 1.414l-9.193 9.193a1 1 0 01-1.414 0L3.715 11.35a1 1 0 111.414-1.414l5.256 5.256 8.486-8.483a1 1 0 011.414 0z" fill="currentColor" />
+  </svg>
+);
+
+export const IconStatusCheck = ({ className = "w-4 h-4" }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={3} aria-hidden="true">
+    <path strokeLinecap="round" strokeLinejoin="round" d="M20 6L9 17l-5-5" />
+  </svg>
+);
+
+export const IconStatusClose = ({ className = "w-4 h-4" }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={3} aria-hidden="true">
+    <path strokeLinecap="round" strokeLinejoin="round" d="M18 6L6 18M6 6l12 12" />
+  </svg>
+);

@@ -89,6 +89,7 @@ export function QuestionElement({
       {showFeedback && (
         <div
           className={`relative mt-6 w-full border px-5 py-4 pl-6 ${feedbackClass}`}
+          role="alert"
         >
           <span
             className={`feedback-accent-bar ${accentBarClass}`}

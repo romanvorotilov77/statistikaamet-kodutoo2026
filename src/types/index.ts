@@ -6,3 +6,12 @@ export type Question = {
 }
 
 export type QuestionsByLanguage = Record<string, Question[]>
+
+export type QuizResult = {
+  selected: string
+  isCorrect: boolean
+}
+
+export type IconProps = {
+  className?: string
+}

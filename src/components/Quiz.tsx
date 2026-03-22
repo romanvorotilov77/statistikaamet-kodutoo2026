@@ -1,8 +1,9 @@
-import { useState } from "react"
+import { useMemo, useState } from "react"
 import { useTranslation } from "react-i18next"
 import { useQuestions } from "../hooks/useQuestions"
+import type { QuizResult } from "../types"
 import { QuestionElement } from "./QuestionElement"
-import QuizIntro from "./QuizIntro"
+import { QuizIntro } from "./QuizIntro"
 import { Tulemus } from "./Tulemus"
 
 export function Quiz() {
@@ -11,7 +12,7 @@ export function Quiz() {
   const [started, setStarted] = useState(false)
   const [currentIndex, setCurrentIndex] = useState(0)
   const [selectedAnswers, setSelectedAnswers] = useState<Record<number, string>>({})
-  const [results, setResults] = useState<Record<number, { selected: string; isCorrect: boolean }>>({})
+  const [results, setResults] = useState<Record<number, QuizResult>>({})
   const [finished, setFinished] = useState(false)
   const [showSelectionError, setShowSelectionError] = useState(false)
 
@@ -19,7 +20,10 @@ export function Quiz() {
   const selectedOption = currentQuestion ? selectedAnswers[currentQuestion.id] : undefined
   const currentResult = currentQuestion ? results[currentQuestion.id] : undefined
   const isSubmitted = Boolean(currentResult)
-  const score = Object.values(results).filter((result) => result.isCorrect).length
+  const score = useMemo(
+    () => Object.values(results).filter((result) => result.isCorrect).length,
+    [results],
+  )
 
   const handleStart = () => {
     setStarted(true)
@@ -69,11 +73,11 @@ export function Quiz() {
     setFinished(true)
   }
 
-  const getFinalMessage = () => {
+  const finalMessage = useMemo(() => {
     if (score === questions.length) return t("quiz.final.excellent")
     if (score >= Math.ceil(questions.length / 2)) return t("quiz.final.good")
     return t("quiz.final.start")
-  }
+  }, [questions.length, score, t])
 
   if (isLoading) {
     return (
@@ -122,7 +126,7 @@ export function Quiz() {
             questions={questions}
             results={results}
             score={score}
-            finalMessage={getFinalMessage()}
+            finalMessage={finalMessage}
             onRestart={handleStart}
           />
         )}

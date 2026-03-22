@@ -1,9 +1,9 @@
-import type { Question } from "../types"
+import type { Question, QuizResult } from "../types"
 import { useTranslation } from "react-i18next"
 
 type TulemusProps = {
   questions: Question[]
-  results: Record<number, { selected: string; isCorrect: boolean }>
+  results: Record<number, QuizResult>
   score: number
   finalMessage: string
   onRestart: () => void

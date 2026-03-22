@@ -24,10 +24,15 @@ export function QuestionElement({
 }: QuestionElementProps) {
   const isSuccessFeedback = isSubmitted && Boolean(isCorrect)
   const showFeedback = isSubmitted || showSelectionError
-  const feedbackStyle = {
-    borderColor: isSuccessFeedback ? "var(--color-stat-success)" : "var(--color-stat-error)",
-    backgroundColor: "var(--color-stat-bg)",
-  }
+  const feedbackClass = isSuccessFeedback ? "feedback-success" : "feedback-error"
+  const accentBarClass = isSuccessFeedback ? "feedback-accent-success" : "feedback-accent-error"
+  const textColorClass = isSuccessFeedback ? "text-stat-success" : "text-stat-error"
+  
+  const feedbackMessage = showSelectionError
+    ? "Palun vali enne vastus"
+    : isSuccessFeedback
+      ? "Õige vastus!"
+      : `Vale vastus. Õige vastus on: ${question.correctAnswer}`
 
   return (
     <article className="bg-white border-2 border-stat-light-grey rounded-2xl p-8 md:p-10">
@@ -77,16 +82,14 @@ export function QuestionElement({
 
       {showFeedback && (
         <div
-          className="relative mt-6 w-full border px-5 py-4 pl-6"
-          style={feedbackStyle}
+          className={`relative mt-6 w-full border px-5 py-4 pl-6 ${feedbackClass}`}
         >
           <span
-            className="absolute left-0 top-0 h-full w-1.5"
-            style={{ backgroundColor: isSuccessFeedback ? "var(--color-stat-success)" : "var(--color-stat-error)" }}
+            className={`feedback-accent-bar ${accentBarClass}`}
             aria-hidden="true"
           />
 
-          <div className={`flex items-center gap-3 ${isSuccessFeedback ? "text-stat-success" : "text-stat-error"}`}>
+          <div className={`flex items-center gap-3 ${textColorClass}`}>
             <span className="flex h-6 w-6 items-center justify-center rounded-full border-2 border-current" aria-hidden="true">
               {isSuccessFeedback ? (
                 <IconStatusCheck className="h-4 w-4" />
@@ -96,11 +99,7 @@ export function QuestionElement({
             </span>
 
             <p className="title-medium">
-              {showSelectionError
-                ? "Palun vali enne vastus"
-                : isSuccessFeedback
-                  ? "Õige vastus!"
-                  : `Vale vastus. Õige vastus on: ${question.correctAnswer}`}
+              {feedbackMessage}
             </p>
           </div>
         </div>

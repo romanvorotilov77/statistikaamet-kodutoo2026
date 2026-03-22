@@ -197,3 +197,45 @@ h3 {
   background-size: 19px 19px;
   background-position: 14px 14px;
 }
+
+.tooltip-arrow {
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid #a9a9a9;
+  transform: rotate(180deg);
+}
+
+.feedback-success {
+  border-color: var(--color-stat-success);
+  background-color: var(--color-stat-bg);
+}
+
+.feedback-error {
+  border-color: var(--color-stat-error);
+  background-color: var(--color-stat-bg);
+}
+
+.feedback-accent-bar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 6px;
+}
+
+.feedback-accent-success {
+  background-color: var(--color-stat-success);
+}
+
+.feedback-accent-error {
+  background-color: var(--color-stat-error);
+}
+
+.quiz-intro-display {
+  max-width: 100%;
+  font-size: clamp(2.2rem, 11vw, 3.75rem);
+  line-height: clamp(2.5rem, 12vw, 4.375rem);
+  overflow-wrap: anywhere;
+}

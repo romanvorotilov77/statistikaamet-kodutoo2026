@@ -10,6 +10,8 @@ type QuestionElementProps = {
   isCorrect: boolean | null
   showSelectionError: boolean
   onSelect: (option: string) => void
+  onCheckAnswer: () => void
+  onNext: () => void
 }
 
 export function QuestionElement({
@@ -21,6 +23,8 @@ export function QuestionElement({
   isCorrect,
   showSelectionError,
   onSelect,
+  onCheckAnswer,
+  onNext,
 }: QuestionElementProps) {
   const isSuccessFeedback = isSubmitted && Boolean(isCorrect)
   const showFeedback = isSubmitted || showSelectionError
@@ -104,6 +108,26 @@ export function QuestionElement({
           </div>
         </div>
       )}
+
+      <div className="flex justify-end gap-4 mt-8">
+        {!isSubmitted ? (
+          <button
+            type="button"
+            onClick={onCheckAnswer}
+            className="title-medium px-6 py-3 bg-black text-white border-2 border-transparent hover:border-black hover:bg-white hover:text-black active:bg-black active:text-white active:border-black transition-all duration-100"
+          >
+            Kontrolli
+          </button>
+        ) : (
+          <button
+            type="button"
+            onClick={onNext}
+            className="title-medium px-6 py-3 bg-black text-white border-2 border-transparent hover:border-black hover:bg-white hover:text-black active:bg-black active:text-white active:border-black transition-all duration-100"
+          >
+            {questionIndex === totalQuestions - 1 ? "Vaata tulemusi" : "Järgmine"}
+          </button>
+        )}
+      </div>
     </article>
   )
 }

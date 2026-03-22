@@ -78,7 +78,7 @@ export function Quiz() {
         {!started && <QuizIntro onStart={handleStart} />}
 
         {started && !finished && currentQuestion && (
-          <div className="space-y-8 pt-2">
+          <div className="pt-2">
             <QuestionElement
               question={currentQuestion}
               questionIndex={currentIndex}
@@ -88,27 +88,9 @@ export function Quiz() {
               isCorrect={currentResult?.isCorrect ?? null}
               showSelectionError={showSelectionError}
               onSelect={handleSelect}
+              onCheckAnswer={handleCheckAnswer}
+              onNext={handleNext}
             />
-
-            <div className="flex justify-end gap-4">
-              {!isSubmitted ? (
-                <button
-                  type="button"
-                  onClick={handleCheckAnswer}
-                  className="title-medium px-6 py-3 bg-black text-white border-2 border-black"
-                >
-                  Kontrolli
-                </button>
-              ) : (
-                <button
-                  type="button"
-                  onClick={handleNext}
-                  className="title-medium px-6 py-3 bg-black text-white border-2 border-black"
-                >
-                  {currentIndex === questions.length - 1 ? "Vaata tulemusi" : "Järgmine"}
-                </button>
-              )}
-            </div>
           </div>
         )}
 

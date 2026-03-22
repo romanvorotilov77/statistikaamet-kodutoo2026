@@ -48,7 +48,7 @@ export function Tulemus({ questions, results, score, finalMessage, onRestart }: 
         <button
           type="button"
           onClick={onRestart}
-          className="title-medium px-6 py-3 bg-black text-white border-2 border-black"
+          className="title-medium px-6 py-3 bg-black text-white border-2 border-transparent hover:border-black hover:bg-white hover:text-black active:bg-black active:text-white active:border-black transition-all duration-100"
         >
           Alusta uuesti
         </button>

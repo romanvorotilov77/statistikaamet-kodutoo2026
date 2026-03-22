@@ -10,7 +10,7 @@ export function Banner({ onLogoClick }: BannerProps) {
   const { t } = useTranslation();
 
   const wrapperClasses = 'w-full h-[100px] bg-white bg-dots';
-  const contentClasses = 'max-w-400 mx-auto w-full h-full flex items-center';
+  const contentClasses = 'max-w-400 mx-auto w-full h-full flex items-center pt-2 ml-18.5';
 
   return (
     <div className={wrapperClasses}>

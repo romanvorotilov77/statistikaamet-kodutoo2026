@@ -79,7 +79,7 @@ test.describe('Quiz E2E', () => {
 
     await expect(page.getByRole('heading', { name: 'Tulemused' })).toBeVisible()
     await expect(page.getByText('Skoor: 2 / 3')).toBeVisible()
-    await expect(page.getByText('Tubli! Sul on tugevad teadmised, jatka samas vaimus.')).toBeVisible()
+    await expect(page.getByText('Tubli! Sul on tugevad teadmised, jätka samas vaimus.')).toBeVisible()
   })
 
   test('score changes between different answer sets', async ({ page }) => {
